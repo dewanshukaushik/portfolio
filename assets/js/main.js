@@ -267,3 +267,29 @@
   new PureCounter();
 
 })()
+
+// function sendEmail(name,email) {
+//   let e_mail = email;
+//   // Email.send({
+//   //   Host : "smtp.mailtrap.io",
+//   //   Username : "<Mailtrap username>",
+//   //   Password : "<Mailtrap password>",
+//   //   To : 'recipient@example.com',
+//   //   From : "sender@example.com",
+//   //   Subject : "Test email",
+//   //   Body : "<html><h2>Header</h2><strong>Bold text</strong><br></br><em>Italic</em></html>"
+//   // }).then(
+//   //   message => alert(message)
+//   // );
+//     window.location.href = "mailto:e_mail?subject=Subject&body=message%20goes%20here";
+// }
+
+function sendEmail() {
+  var nameValue = document.getElementById("name").value;
+  var emailValue = document.getElementById("email").value;
+  var subjectValue = document.getElementById("subject").value;
+  var messageValue = document.getElementById("message").value;
+  var mailtoLink = "mailto:" + emailValue + "?subject=" + encodeURIComponent(subjectValue) + "&body=" + encodeURIComponent("Name: " + nameValue + "\n\n" + messageValue);
+  window.location.href = mailtoLink;
+}
+
